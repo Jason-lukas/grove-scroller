@@ -42,8 +42,8 @@ def main():
 
                 print("x: {} y: {} z: {}".format(test_cube.pos[0], test_cube.pos[1], test_cube.pos[2]))
 
-            mouse_pos = get_input()
-            test_cube.pos = (mouse_pos[0], mouse_pos[1], 0)
+        mouse_pos = get_input()
+        test_cube.pos = (mouse_pos[0], mouse_pos[1], 0)
 
         # sim
         # move

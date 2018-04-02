@@ -20,5 +20,5 @@ def clamp(val, min_val, max_val):
 
 
 def lerp(val1, val2, alpha):
-    alpha = clamp(float(alpha), 0.0, 1.0)
+
     return float(val1) + alpha * float(val2 - val1)
