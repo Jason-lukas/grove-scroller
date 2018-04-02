@@ -9,6 +9,8 @@ from utility import *
 from entity import Entity
 from my_input import *
 from asteroid import Asteroid
+from spawner import Spawner
+
 
 
 def main():
@@ -27,9 +29,7 @@ def main():
     move = 0.5
     drawn.append(test_cube)
 
-    asteroid = Asteroid((5, 0, 0))
-    simulated.append(asteroid)
-    drawn.append(asteroid)
+    asteroid_spawner = Spawner(drawn, simulated, Asteroid, 2)
 
     wait_t = int(config.delta_t*1000)
 
@@ -56,6 +56,15 @@ def main():
 
         for entity in simulated:
             entity.sim()
+        asteroid_spawner.sim()
+
+        # Collisions
+
+        # Despawn
+        for entity in simulated:
+            if entity.pos[0] < config.x_min - config.margin:
+                simulated.remove(entity)
+                drawn.remove(entity)
 
         mouse_pos = get_input()
         test_cube.pos = (mouse_pos[0], mouse_pos[1], 0)

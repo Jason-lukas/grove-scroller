@@ -11,7 +11,7 @@ class Asteroid(Entity):
         self.color_f = (0.5, 0.5, 0.5)
 
         self.rot_speed = self.rot_random(rot_rate)
-        self.speed = (-1, 0, 0)
+        self.speed = (-2.5, 0, 0)
 
     @staticmethod
     def rot_random(rate):
