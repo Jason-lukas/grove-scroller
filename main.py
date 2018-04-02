@@ -21,6 +21,8 @@ def main():
 
     move = 0.5
 
+    wait_t= int(config.delta_t*1000)
+
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -45,14 +47,10 @@ def main():
         mouse_pos = get_input()
         test_cube.pos = (mouse_pos[0], mouse_pos[1], 0)
 
-        # sim
-        # move
-        # coll
-        # draw
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
         test_cube.draw()
         pygame.display.flip()
-        pygame.time.wait(10)
+        pygame.time.wait(wait_t)
 
 
 main()

@@ -18,6 +18,9 @@ class Entity:
         self.rot = rot
         self.radius = radius
 
+    def sim(self):
+        pass
+
     def draw(self):
         glMatrixMode(GL_MODELVIEW)
         glPushMatrix()
